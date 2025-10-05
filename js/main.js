@@ -1,47 +1,55 @@
 // main.js
 
-// 🌙 Theme Toggle
-const themeToggle = document.createElement("button");
-themeToggle.className = "theme-toggle";
-themeToggle.innerHTML = "🌓";
-document.body.appendChild(themeToggle);
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector("nav");
+  const themeToggle = document.querySelector("#theme-toggle");
+  const links = document.querySelectorAll("a[href^='#']");
 
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
-
-  // Save preference
-  if (document.body.classList.contains("light-mode")) {
-    localStorage.setItem("theme", "light");
-  } else {
-    localStorage.setItem("theme", "dark");
-  }
-});
-
-// Load saved theme
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-mode");
-}
-
-// Smooth Scroll for internal links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop - 70,
-        behavior: "smooth"
-      });
-    }
+  // Sticky Navbar
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) nav.classList.add("scrolled");
+    else nav.classList.remove("scrolled");
   });
-});
 
-// Sticky Header Shadow
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-  if (window.scrollY > 60) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
+  // Smooth Scroll
+  links.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      document.querySelector(link.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
+  // Theme Toggle
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
+      localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark-theme") ? "dark" : "light"
+      );
+    });
   }
+
+  // Remember theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-theme");
+  }
+
+  // Button ripple effect
+  document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      const circle = document.createElement("span");
+      circle.classList.add("ripple");
+      this.appendChild(circle);
+
+      const x = e.clientX - e.target.offsetLeft;
+      const y = e.clientY - e.target.offsetTop;
+      circle.style.left = `${x}px`;
+      circle.style.top = `${y}px`;
+
+      setTimeout(() => circle.remove(), 500);
+    });
+  });
 });
