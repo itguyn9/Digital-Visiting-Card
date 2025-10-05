@@ -1,233 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JK Digital Cards | Premium Digital Business Cards</title>
-    <meta name="description" content="Professional digital business cards with QR codes, WhatsApp integration, and instant sharing. Transform your business networking.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="assets/images/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JK Digital Cards | Premium Digital Business Cards</title>
+
+  <!-- 🌐 Meta -->
+  <meta name="description" content="Professional digital business cards with QR codes, WhatsApp integration, and instant sharing. Transform your business networking." />
+  <meta name="keywords" content="Digital Business Cards, QR Cards, JK Digital Cards, Online Business Cards, WhatsApp Cards, Virtual Visiting Cards, Digital Identity" />
+  <meta name="author" content="Jehangir Khan" />
+
+  <!-- 🔗 Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+
+  <!-- 🎨 CSS Files -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- 🧩 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- 🇴 Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- ⚙️ SEO + Social Sharing -->
+  <meta property="og:title" content="JK Digital Cards | Premium Digital Business Cards" />
+  <meta property="og:description" content="Create professional digital cards with QR, WhatsApp, and instant sharing." />
+  <meta property="og:image" content="assets/images/preview.png" />
+  <meta property="og:url" content="https://itguyn9.github.io/jk-digital-cards/" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="assets/images/logo.png" alt="JK Digital Cards" class="logo-img">
-                <div class="logo-text">JK Digital Cards</div>
-            </div>
-            <nav class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#samples">Samples</a>
-                <a href="#packages">Packages</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#faq">FAQ</a>
-            </nav>
-            <div class="nav-actions">
-                <button class="btn btn-outline" onclick="scrollToSection('contact')">Contact</button>
-                <button class="btn btn-primary" onclick="startCardBuilder()">Create Your Card</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="hero-badge">🚀 Premium Digital Business Cards</span>
-                <h1 class="hero-title">Transform Your Business Networking with Digital Cards</h1>
-                <p class="hero-subtitle">Professional digital business cards with QR codes, WhatsApp integration, and instant sharing. Make lasting impressions without the paper waste.</p>
-                <div class="hero-actions">
-                    <button class="btn btn-primary" onclick="startCardBuilder()">Create Your Card</button>
-                    <button class="btn btn-outline" onclick="scrollToSection('samples')">View Samples</button>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">300+</div>
-                        <div class="stat-label">Happy Clients</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">600+</div>
-                        <div class="stat-label">Cards Created</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">24h</div>
-                        <div class="stat-label">Avg. Delivery</div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="card-preview">
-                    <div class="card-header">
-                        <div class="card-avatar">JK</div>
-                        <div class="card-info">
-                            <h3>Jehangir Khan</h3>
-                            <p>Digital Solutions Expert</p>
-                            <p>+92 345 9016204</p>
-                        </div>
-                    </div>
-                    <div class="card-contact">
-                        <div class="contact-btn">
-                            <span>📞</span> Call
-                        </div>
-                        <div class="contact-btn">
-                            <span>💬</span> WhatsApp
-                        </div>
-                        <div class="contact-btn">
-                            <span>✉️</span> Email
-                        </div>
-                        <div class="contact-btn">
-                            <span>🔗</span> Portfolio
-                        </div>
-                    </div>
-                    <div class="card-qr">
-                        <div class="qr-placeholder">QR Code</div>
-                        <p class="qr-text">Scan to save contact</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Indicators -->
-    <div class="container">
-        <div class="trust-indicators">
-            <div class="trust-item">
-                <div class="trust-icon">🔒</div>
-                <div class="trust-text">Secure & Private</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">🚀</div>
-                <div class="trust-text">24h Delivery</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">⭐</div>
-                <div class="trust-text">5-Star Reviews</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">💯</div>
-                <div class="trust-text">Satisfaction Guarantee</div>
-            </div>
-        </div>
+  <!-- ✅ Header -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="JK Digital Cards Logo" class="logo-img" />
+        <div class="logo-text">JK Digital Cards</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#samples">Samples</a>
+        <a href="#packages">Packages</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-outline" onclick="scrollToSection('contact')">Contact</button>
+        <button class="btn btn-primary" onclick="startCardBuilder()">Create Your Card</button>
+      </div>
     </div>
+  </header>
 
-    <!-- Interactive Card Builder -->
-    <section class="section" id="card-builder">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Build Your Digital Card</h2>
-                <p class="section-subtitle">Customize your digital business card in just a few steps</p>
-            </div>
-            
-            <div class="preview-container">
-                <div class="card-builder">
-                    <div class="builder-header">
-                        <h3>Create Your Card</h3>
-                        <p>Follow these simple steps to design your perfect digital business card</p>
-                    </div>
-                    
-                    <div class="builder-steps">
-                        <div class="step active" data-step="1">
-                            <div class="step-number">1</div>
-                            <div class="step-label">Personal Info</div>
-                        </div>
-                        <div class="step" data-step="2">
-                            <div class="step-number">2</div>
-                            <div class="step-label">Design</div>
-                        </div>
-                        <div class="step" data-step="3">
-                            <div class="step-number">3</div>
-                            <div class="step-label">Review & Order</div>
-                        </div>
-                    </div>
-                    
-                    <div class="builder-content active" id="step-1">
-                        <!-- Step 1 content -->
-                    </div>
-                    
-                    <div class="builder-content" id="step-2">
-                        <!-- Step 2 content -->
-                    </div>
-                    
-                    <div class="builder-content" id="step-3">
-                        <!-- Step 3 content -->
-                    </div>
-                </div>
-                
-                <div class="live-preview">
-                    <h4>Live Preview</h4>
-                    <div class="card-preview" id="live-card-preview">
-                        <!-- Live preview content -->
-                    </div>
-                </div>
-            </div>
+  <!-- ✅ Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">🚀 Premium Digital Business Cards</span>
+        <h1 class="hero-title">Transform Your Business Networking</h1>
+        <p class="hero-subtitle">Professional digital business cards with QR codes, WhatsApp integration, and instant sharing. Make lasting impressions without the paper waste.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="startCardBuilder()">Create Your Card</button>
+          <button class="btn btn-outline" onclick="scrollToSection('samples')">View Samples</button>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section" id="features">
-        <!-- Features content -->
-    </section>
-
-    <!-- Samples Gallery -->
-    <section class="section" id="samples">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Work Samples</h2>
-                <p class="section-subtitle">See examples of digital business cards we've created for our clients</p>
-            </div>
-            <div class="samples-grid" id="samples-container">
-                <!-- Samples will be loaded dynamically -->
-            </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-number">300+</div><div class="stat-label">Happy Clients</div></div>
+          <div class="stat"><div class="stat-number">600+</div><div class="stat-label">Cards Created</div></div>
+          <div class="stat"><div class="stat-number">24h</div><div class="stat-label">Avg. Delivery</div></div>
         </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section class="section packages" id="packages">
-        <!-- Packages content -->
-    </section>
-
-    <!-- WhatsApp Order Section -->
-    <section class="section" id="whatsapp-order">
-        <div class="container">
-            <div class="order-container">
-                <h2>Ready to Order?</h2>
-                <p>Select your package and we'll contact you on WhatsApp to complete your order</p>
-                <div class="whatsapp-order-options">
-                    <div class="order-option" data-package="essential">
-                        <h3>Essential</h3>
-                        <div class="price">PKR 1500</div>
-                        <button class="btn btn-outline" onclick="orderViaWhatsApp('essential')">Order via WhatsApp</button>
-                    </div>
-                    <div class="order-option popular" data-package="professional">
-                        <h3>Professional</h3>
-                        <div class="price">PKR 2500</div>
-                        <button class="btn btn-primary" onclick="orderViaWhatsApp('professional')">Order via WhatsApp</button>
-                    </div>
-                    <div class="order-option" data-package="business">
-                        <h3>Business</h3>
-                        <div class="price">PKR 5000/year</div>
-                        <button class="btn btn-outline" onclick="orderViaWhatsApp('business')">Order via WhatsApp</button>
-                    </div>
-                </div>
+      </div>
+      <div class="hero-visual">
+        <div class="card-preview">
+          <div class="card-header">
+            <div class="card-avatar">JK</div>
+            <div class="card-info">
+              <h3>Jehangir Khan</h3>
+              <p>Digital Solutions Expert</p>
+              <p>+92 345 9016204</p>
             </div>
+          </div>
+          <div class="card-contact">
+            <div class="contact-btn"><span>📞</span> Call</div>
+            <div class="contact-btn"><span>💬</span> WhatsApp</div>
+            <div class="contact-btn"><span>✉️</span> Email</div>
+            <div class="contact-btn"><span>🔗</span> Portfolio</div>
+          </div>
+          <div class="card-qr">
+            <div class="qr-placeholder">QR Code</div>
+            <p class="qr-text">Scan to save contact</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <!-- Footer content -->
-    </footer>
+  <!-- ✅ Trust Indicators -->
+  <section class="trust-section">
+    <div class="container trust-indicators">
+      <div class="trust-item"><div class="trust-icon">🔒</div><div class="trust-text">Secure & Private</div></div>
+      <div class="trust-item"><div class="trust-icon">🚀</div><div class="trust-text">24h Delivery</div></div>
+      <div class="trust-item"><div class="trust-icon">⭐</div><div class="trust-text">5-Star Reviews</div></div>
+      <div class="trust-item"><div class="trust-icon">💯</div><div class="trust-text">Satisfaction Guarantee</div></div>
+    </div>
+  </section>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/923459016204?text=Hi! I'm interested in JK Digital Cards" class="whatsapp-float" target="_blank">
+  <!-- ✅ Card Builder -->
+  <section id="card-builder" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Build Your Digital Card</h2>
+        <p class="section-subtitle">Customize your digital business card in just a few steps</p>
+      </div>
+      <div class="preview-container">
+        <div class="card-builder">
+          <div class="builder-header">
+            <h3>Create Your Card</h3>
+            <p>Follow these steps to design your perfect card</p>
+          </div>
+          <div class="builder-steps">
+            <div class="step active" data-step="1"><div class="step-number">1</div><div class="step-label">Personal Info</div></div>
+            <div class="step" data-step="2"><div class="step-number">2</div><div class="step-label">Design</div></div>
+            <div class="step" data-step="3"><div class="step-number">3</div><div class="step-label">Review & Order</div></div>
+          </div>
+          <div class="builder-content active" id="step-1"></div>
+          <div class="builder-content" id="step-2"></div>
+          <div class="builder-content" id="step-3"></div>
+        </div>
+        <div class="live-preview">
+          <h4>Live Preview</h4>
+          <div class="card-preview" id="live-card-preview"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Samples -->
+  <section id="samples" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Work Samples</h2>
+        <p class="section-subtitle">See examples of cards we've created for clients</p>
+      </div>
+      <div class="samples-grid" id="samples-container"></div>
+    </div>
+  </section>
+
+  <!-- ✅ Packages -->
+  <section id="packages" class="section packages">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Packages & Pricing</h2>
+      </div>
+      <!-- JS inserts plans dynamically -->
+    </div>
+  </section>
+
+  <!-- ✅ WhatsApp Order -->
+  <section id="whatsapp-order" class="section">
+    <div class="container order-container">
+      <h2>Ready to Order?</h2>
+      <p>Select your package and we'll contact you on WhatsApp</p>
+      <div class="whatsapp-order-options">
+        <div class="order-option" data-package="essential">
+          <h3>Essential</h3>
+          <div class="price">PKR 1500</div>
+          <button class="btn btn-outline" onclick="orderViaWhatsApp('essential')">Order via WhatsApp</button>
+        </div>
+        <div class="order-option popular" data-package="professional">
+          <h3>Professional</h3>
+          <div class="price">PKR 2500</div>
+          <button class="btn btn-primary" onclick="orderViaWhatsApp('professional')">Order via WhatsApp</button>
+        </div>
+        <div class="order-option" data-package="business">
+          <h3>Business</h3>
+          <div class="price">PKR 5000/year</div>
+          <button class="btn btn-outline" onclick="orderViaWhatsApp('business')">Order via WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p>© 2025 JK Digital Cards | Developed by <strong>Jehangir Khan</strong></p>
+      <a href="https://wa.me/923459016204?text=Hi! I'm interested in JK Digital Cards" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
-    </a>
+      </a>
+    </div>
+  </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/card-builder.js"></script>
-    <script src="js/pricing-calculator.js"></script>
+  <!-- ⚙️ JS Files -->
+  <script src="js/main.js"></script>
+  <script src="js/card-builder.js"></script>
+  <script src="js/pricing-calculator.js"></script>
 </body>
 </html>
