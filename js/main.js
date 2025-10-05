@@ -1,14 +1,15 @@
-// Main JavaScript functionality
+// JK Digital Cards - Main Script
 const WHATSAPP_NUMBER = '923459016204';
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+// Run when DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
     initializeSamples();
     initializeScrollEffects();
     initializeAnimations();
+    initializeMobileMenu();
 });
 
-// Smooth scrolling
+// Smooth scroll to section
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -16,27 +17,26 @@ function scrollToSection(sectionId) {
     }
 }
 
-// WhatsApp ordering function
+// WhatsApp ordering
 function orderViaWhatsApp(packageType) {
     const packageNames = {
-        'essential': 'Essential Package (PKR 1500)',
-        'professional': 'Professional Package (PKR 2500)',
-        'business': 'Business Package (PKR 5000/year)'
+        essential: 'Essential Package (PKR 1500)',
+        professional: 'Professional Package (PKR 2500)',
+        business: 'Business Package (PKR 5000/year)'
     };
-    
+
     const message = `Hello! I would like to order the ${packageNames[packageType]} from JK Digital Cards. Please provide me with more details.`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-    
+
     window.open(whatsappUrl, '_blank');
 }
 
-// Initialize samples gallery
+// Load work samples dynamically
 function initializeSamples() {
     const samplesContainer = document.getElementById('samples-container');
     if (!samplesContainer) return;
-    
-    // This would be populated from your actual sample images
+
     const samples = [
         {
             name: 'Medical Professional',
@@ -50,85 +50,73 @@ function initializeSamples() {
             image: 'assets/images/samples/real-estate-sample.jpg',
             description: 'Professional card for property experts'
         },
-        // Add more samples...
+        {
+            name: 'Freelancer Portfolio',
+            category: 'Creative',
+            image: 'assets/images/samples/freelancer-sample.jpg',
+            description: 'Modern design for online professionals'
+        }
     ];
-    
+
     samples.forEach(sample => {
-        const sampleElement = createSampleElement(sample);
+        const sampleElement = document.createElement('div');
+        sampleElement.className = 'sample-item';
+        sampleElement.innerHTML = `
+            <div class="sample-image">
+                <img src="${sample.image}" alt="${sample.name}" loading="lazy">
+                <div class="sample-overlay">
+                    <div class="sample-category">${sample.category}</div>
+                    <h4>${sample.name}</h4>
+                    <p>${sample.description}</p>
+                </div>
+            </div>
+        `;
         samplesContainer.appendChild(sampleElement);
     });
 }
 
-function createSampleElement(sample) {
-    const div = document.createElement('div');
-    div.className = 'sample-item';
-    div.innerHTML = `
-        <div class="sample-image">
-            <img src="${sample.image}" alt="${sample.name}" loading="lazy">
-            <div class="sample-overlay">
-                <div class="sample-category">${sample.category}</div>
-                <h4>${sample.name}</h4>
-                <p>${sample.description}</p>
-            </div>
-        </div>
-    `;
-    return div;
-}
-
-// Header scroll effect
+// Header scroll and back-to-top effect
 function initializeScrollEffects() {
     window.addEventListener('scroll', () => {
         const header = document.querySelector('header');
-        const backToTop = document.getElementById('backToTop');
-        
+        if (!header) return;
+
         if (window.scrollY > 50) {
-            header.style.background = 'rgba(15, 23, 42, 0.95)';
+            header.classList.add('scrolled');
         } else {
-            header.style.background = 'rgba(15, 23, 42, 0.9)';
-        }
-        
-        if (backToTop) {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
+            header.classList.remove('scrolled');
         }
     });
 }
 
-// Animation initialization
+// Animation effects on scroll
 function initializeAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Observe elements for animation
     document.querySelectorAll('.feature-card, .package-card, .testimonial-card, .sample-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.classList.add('animate-on-scroll');
         observer.observe(el);
     });
 }
 
-// Start card builder
+// Scroll to card builder section
 function startCardBuilder() {
     scrollToSection('card-builder');
-    // Additional initialization for card builder
 }
-// Mobile menu functionality
+
+// Mobile menu toggle
 function initializeMobileMenu() {
+    const navContainer = document.querySelector('.nav-container');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (!navContainer || !navLinks) return;
+
     const mobileMenuToggle = document.createElement('button');
     mobileMenuToggle.className = 'mobile-menu-toggle';
     mobileMenuToggle.innerHTML = `
@@ -136,21 +124,16 @@ function initializeMobileMenu() {
         <span></span>
         <span></span>
     `;
-    
-    const navContainer = document.querySelector('.nav-container');
-    const navLinks = document.querySelector('.nav-links');
-    
-    // Insert mobile menu toggle button
-    navContainer.appendChild(mobileMenuToggle);
-    
-    // Toggle mobile menu
-    mobileMenuToggle.addEventListener('click', function() {
+    navContainer.insertBefore(mobileMenuToggle, navContainer.firstChild);
+
+    // Toggle open/close
+    mobileMenuToggle.addEventListener('click', function () {
         this.classList.toggle('active');
         navLinks.classList.toggle('active');
         document.body.classList.toggle('menu-open');
     });
-    
-    // Close menu when clicking on links
+
+    // Close when clicking a link
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenuToggle.classList.remove('active');
@@ -158,54 +141,4 @@ function initializeMobileMenu() {
             document.body.classList.remove('menu-open');
         });
     });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!navContainer.contains(e.target) && navLinks.classList.contains('active')) {
-            mobileMenuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
-    });
-}
-
-// Add to your DOMContentLoaded event
-document.addEventListener('DOMContentLoaded', function() {
-    initializeMobileMenu();
-    // ... other initialization code
-});
-
-/* Prevent body scroll when mobile menu is open */
-body.menu-open {
-    overflow: hidden;
-}
-
-/* Mobile menu toggle button (hidden by default) */
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-}
-
-.mobile-menu-toggle span {
-    width: 20px;
-    height: 2px;
-    background: var(--light);
-    transition: var(--transition);
-}
-
-.mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-
-.mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
 }
