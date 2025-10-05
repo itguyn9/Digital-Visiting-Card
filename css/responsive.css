@@ -1,32 +1,49 @@
+/* responsive.css */
+
+/* Small Devices */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .nav-links {
+  nav ul {
     display: none;
   }
 
-  .logo-text {
-    font-size: 20px;
+  nav .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  section {
+    padding: 70px 15px;
+  }
+
+  #card-builder {
+    padding: 25px;
+  }
+
+  #pricing {
+    padding: 25px;
+  }
+
+  #card-preview {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
   }
 }
 
+/* Very Small Devices */
 @media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.8rem;
+  nav .logo {
+    font-size: 16px;
   }
 
-  .btn-primary, .btn-secondary {
-    padding: 10px 20px;
+  section h1 {
+    font-size: 1.5rem;
   }
 
-  .feature-card, .price-card {
-    padding: 15px;
+  #total-price {
+    font-size: 1.2rem;
   }
 }
