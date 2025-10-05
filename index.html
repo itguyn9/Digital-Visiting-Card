@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JK Digital Business Cards - Premium digital visiting cards in KPK, Mardan, Rustam, Chargulli. Create professional digital cards with advanced features.">
-    <meta name="keywords" content="digital business cards, digital visiting cards, KPK, Mardan, Rustam, Chargulli, digital marketing, freelancer, SEO">
+    <meta name="description" content="JK Digital Business Cards - Premium digital visiting cards in KPK, Mardan, Rustam, Chargulli. Create professional NFC, QR code digital cards with analytics.">
+    <meta name="keywords" content="digital business cards, digital visiting cards, KPK digital cards, Mardan business cards, Rustam NFC cards, Chargulli digital marketing, freelancer SEO, Pakistan digital cards">
     <meta name="author" content="JK Digital Business Cards">
     
     <!-- SEO Meta Tags -->
-    <meta property="og:title" content="JK Digital Business Cards - Premium Digital Visiting Cards">
-    <meta property="og:description" content="Create professional digital business cards in KPK, Mardan, Rustam, Chargulli. Advanced features for businesses and freelancers.">
+    <meta property="og:title" content="JK Digital Business Cards - Premium Digital Visiting Cards in KPK">
+    <meta property="og:description" content="Create professional digital business cards in KPK, Mardan, Rustam, Chargulli. Advanced features for businesses and freelancers with NFC, QR codes & analytics.">
     <meta property="og:image" content="assets/images/card-sample-mockup1.png">
     <meta property="og:url" content="https://jk-digital-cards.com">
     <meta name="twitter:card" content="summary_large_image">
@@ -22,11 +22,13 @@
       "name": "JK Digital Business Cards",
       "description": "Premium digital business cards service in KPK, Mardan, Rustam, Chargulli",
       "url": "https://jk-digital-cards.com",
-      "telephone": "+92-XXX-XXXXXXX",
+      "telephone": "+92-321-1234567",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "123 Business Plaza",
         "addressLocality": "Mardan",
         "addressRegion": "KPK",
+        "postalCode": "23200",
         "addressCountry": "Pakistan"
       },
       "geo": {
@@ -34,8 +36,29 @@
         "latitude": "34.202380",
         "longitude": "72.044380"
       },
-      "openingHours": "Mo-Fr 09:00-18:00",
-      "areaServed": ["KPK", "Mardan", "Rustam", "Chargulli"],
+      "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-16:00",
+      "areaServed": ["KPK", "Mardan", "Rustam", "Chargulli", "Peshawar", "Swabi"],
+      "serviceType": "Digital Business Cards",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Card Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Basic Digital Card"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Premium Digital Card"
+            }
+          }
+        ]
+      },
       "sameAs": [
         "https://www.facebook.com/jkdigitalcards",
         "https://www.instagram.com/jkdigitalcards",
@@ -50,7 +73,7 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -66,7 +89,9 @@
             --white: #ffffff;
             --black: #000000;
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
             --radius: 12px;
+            --radius-lg: 20px;
             --transition: all 0.3s ease;
         }
         
@@ -98,6 +123,29 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         /* Header */
@@ -211,7 +259,7 @@
         
         /* Hero Section */
         .hero {
-            padding: 100px 0;
+            padding: 120px 0;
             background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
             position: relative;
             overflow: hidden;
@@ -242,9 +290,20 @@
             max-width: 600px;
         }
         
+        .hero-badge {
+            display: inline-block;
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
         .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.2rem;
+            font-weight: 800;
             line-height: 1.2;
             margin-bottom: 20px;
             color: var(--secondary);
@@ -255,10 +314,30 @@
         }
         
         .hero-description {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--medium-gray);
             margin-bottom: 30px;
             max-width: 500px;
+        }
+        
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+        
+        .hero-feature i {
+            color: var(--primary);
+            font-weight: bold;
         }
         
         .hero-buttons {
@@ -296,10 +375,10 @@
         }
         
         .card-mockup {
-            width: 300px;
-            height: 500px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
+            width: 320px;
+            height: 520px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
             background-color: var(--white);
             overflow: hidden;
             position: relative;
@@ -310,7 +389,7 @@
         
         .card-mockup:hover {
             transform: rotate(0deg) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
         
         .card-mockup img {
@@ -321,8 +400,8 @@
         
         .card-mockup:nth-child(2) {
             position: absolute;
-            top: 30px;
-            right: 150px;
+            top: 40px;
+            right: 160px;
             transform: rotate(-5deg);
             z-index: -1;
         }
@@ -332,29 +411,6 @@
         }
         
         /* Features Section */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-        
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--medium-gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -368,17 +424,20 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             border: 1px solid var(--light-gray);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
             border-color: var(--primary-light);
         }
         
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             display: flex;
@@ -389,7 +448,7 @@
         
         .feature-icon i {
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
         
         .feature-title {
@@ -402,6 +461,216 @@
         .feature-description {
             color: var(--medium-gray);
             line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .feature-list {
+            margin-top: 15px;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            background-color: var(--light);
+        }
+        
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-light);
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            padding: 0 15px;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .step-description {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--white);
+        }
+        
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background: var(--light);
+            padding: 5px;
+            border-radius: var(--radius);
+            max-width: 300px;
+            margin: 0 auto 50px;
+        }
+        
+        .pricing-tab {
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            flex: 1;
+            text-align: center;
+        }
+        
+        .pricing-tab.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+            text-align: center;
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .pricing-description {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .pricing-period {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            font-weight: 400;
+        }
+        
+        .pricing-features {
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--medium-gray);
+        }
+        
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .pricing-features li.disabled {
+            color: var(--light-gray);
+        }
+        
+        .pricing-features li.disabled:before {
+            content: "✕";
+            color: var(--light-gray);
         }
         
         /* Locations Section */
@@ -427,13 +696,13 @@
         
         .location-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
             border-color: var(--primary);
         }
         
         .location-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             display: flex;
@@ -444,7 +713,7 @@
         
         .location-icon i {
             color: var(--white);
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
         
         .location-name {
@@ -456,6 +725,26 @@
         
         .location-description {
             color: var(--medium-gray);
+            margin-bottom: 15px;
+        }
+        
+        .location-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .location-stat {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        .location-stat span {
+            display: block;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
         }
         
         /* Testimonials Section */
@@ -481,6 +770,7 @@
             font-style: italic;
             margin-bottom: 20px;
             color: var(--secondary);
+            line-height: 1.7;
         }
         
         .testimonial-author {
@@ -511,25 +801,91 @@
             color: var(--medium-gray);
         }
         
+        /* FAQ Section */
+        .faq {
+            background-color: var(--light);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            color: var(--secondary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(230, 57, 70, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            color: var(--medium-gray);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question {
+            color: var(--primary);
+        }
+        
+        .faq-toggle {
+            color: var(--primary);
+            font-weight: bold;
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
         /* CTA Section */
         .cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
         }
         
         .cta-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 20px;
         }
         
         .cta-description {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 30px;
             opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
         }
         
         .cta-button {
@@ -547,6 +903,17 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             background: var(--secondary);
             color: var(--white);
+        }
+        
+        .cta-button.outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+        
+        .cta-button.outline:hover {
+            background: var(--white);
+            color: var(--primary);
         }
         
         /* Footer */
@@ -597,6 +964,28 @@
             padding-left: 5px;
         }
         
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
@@ -631,6 +1020,23 @@
             .card-mockup:nth-child(2) {
                 right: 50px;
             }
+            
+            .steps-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .steps-container::before {
+                display: none;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
         }
         
         @media (max-width: 768px) {
@@ -647,8 +1053,8 @@
             }
             
             .card-mockup {
-                width: 250px;
-                height: 400px;
+                width: 280px;
+                height: 450px;
             }
             
             .card-mockup:nth-child(2) {
@@ -657,6 +1063,15 @@
             
             .logo img {
                 height: 50px;
+            }
+            
+            .cta-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
         
@@ -687,6 +1102,10 @@
             .logo-text {
                 font-size: 1.3rem;
             }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -703,10 +1122,11 @@
             
             <nav class="nav-menu">
                 <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="#locations" class="nav-link">Locations</a>
                 <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#faq" class="nav-link">FAQ</a>
             </nav>
             
             <div class="header-actions">
@@ -720,17 +1140,25 @@
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
+                <div class="hero-badge">#1 Digital Cards in KPK</div>
                 <h1 class="hero-title">Premium Digital Business Cards for <span>KPK Professionals</span></h1>
-                <p class="hero-description">Create stunning digital visiting cards that make lasting impressions. Share your contact information instantly with anyone, anywhere in KPK and beyond.</p>
+                <p class="hero-description">Create stunning digital visiting cards that make lasting impressions. Share your contact information instantly with NFC, QR codes, or links.</p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature"><i>✓</i> NFC & QR Code Technology</div>
+                    <div class="hero-feature"><i>✓</i> Real-time Analytics</div>
+                    <div class="hero-feature"><i>✓</i> Custom Branding</div>
+                    <div class="hero-feature"><i>✓</i> Multi-language Support</div>
+                </div>
                 
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">Create Your Card</button>
+                    <button class="btn btn-primary">Create Your Card - Free Trial</button>
                     <button class="btn btn-outline">Watch Demo</button>
                 </div>
                 
                 <div class="hero-stats">
                     <div class="stat">
-                        <div class="stat-value">500+</div>
+                        <div class="stat-value">750+</div>
                         <div class="stat-label">Happy Clients</div>
                     </div>
                     <div class="stat">
@@ -739,7 +1167,7 @@
                     </div>
                     <div class="stat">
                         <div class="stat-value">24/7</div>
-                        <div class="stat-label">Support</div>
+                        <div class="stat-label">Local Support</div>
                     </div>
                 </div>
             </div>
@@ -766,51 +1194,186 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i>✓</i>
+                        <i>QR</i>
                     </div>
-                    <h3 class="feature-title">Instant Sharing</h3>
-                    <p class="feature-description">Share your digital visiting card via QR code, link, or NFC tap. No more running out of physical cards.</p>
+                    <h3 class="feature-title">QR Code & NFC Technology</h3>
+                    <p class="feature-description">Share your digital card instantly with a simple scan or tap. No app required for recipients.</p>
+                    <ul class="feature-list">
+                        <li>Custom QR codes with your branding</li>
+                        <li>NFC cards for instant sharing</li>
+                        <li>Dynamic QR codes that never expire</li>
+                        <li>Works with any smartphone</li>
+                    </ul>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i>✓</i>
+                        <i>📊</i>
                     </div>
-                    <h3 class="feature-title">Real-time Updates</h3>
-                    <p class="feature-description">Change your contact information anytime. All your shared cards update automatically.</p>
+                    <h3 class="feature-title">Advanced Analytics</h3>
+                    <p class="feature-description">Track engagement and measure the effectiveness of your networking efforts.</p>
+                    <ul class="feature-list">
+                        <li>Real-time view tracking</li>
+                        <li>Click-through rates on links</li>
+                        <li>Geographic data of viewers</li>
+                        <li>Exportable reports</li>
+                    </ul>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i>✓</i>
-                    </div>
-                    <h3 class="feature-title">Analytics Dashboard</h3>
-                    <p class="feature-description">Track how many people view your card and which links they click on.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i>✓</i>
-                    </div>
-                    <h3 class="feature-title">Multiple Profiles</h3>
-                    <p class="feature-description">Create different cards for different purposes - business, personal, or event-specific.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i>✓</i>
-                    </div>
-                    <h3 class="feature-title">Social Media Integration</h3>
-                    <p class="feature-description">Connect all your social profiles in one place for comprehensive networking.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i>✓</i>
+                        <i>🎨</i>
                     </div>
                     <h3 class="feature-title">Custom Branding</h3>
-                    <p class="feature-description">Add your logo, brand colors, and custom backgrounds to match your identity.</p>
+                    <p class="feature-description">Create a card that perfectly represents your brand identity and professional image.</p>
+                    <ul class="feature-list">
+                        <li>Custom colors and fonts</li>
+                        <li>Logo integration</li>
+                        <li>Background images and patterns</li>
+                        <li>Brand consistency across platforms</li>
+                    </ul>
                 </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🔄</i>
+                    </div>
+                    <h3 class="feature-title">Real-time Updates</h3>
+                    <p class="feature-description">Change your information anytime and all your shared cards update automatically.</p>
+                    <ul class="feature-list">
+                        <li>Instant updates across all shares</li>
+                        <li>No need to reprint or redistribute</li>
+                        <li>Version history of changes</li>
+                        <li>Selective field updates</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🌐</i>
+                    </div>
+                    <h3 class="feature-title">Multi-language Support</h3>
+                    <p class="feature-description">Reach a wider audience with cards that can be displayed in multiple languages.</p>
+                    <ul class="feature-list">
+                        <li>Automatic language detection</li>
+                        <li>Manual language selection</li>
+                        <li>Support for Urdu, Pashto, English</li>
+                        <li>Custom translation options</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🔒</i>
+                    </div>
+                    <h3 class="feature-title">Security & Privacy</h3>
+                    <p class="feature-description">Keep your information secure with advanced privacy controls and data protection.</p>
+                    <ul class="feature-list">
+                        <li>Password protection options</li>
+                        <li>Expiring share links</li>
+                        <li>GDPR compliant data handling</li>
+                        <li>Secure cloud storage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Get your professional digital business card in just 3 simple steps</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Create Your Card</h3>
+                    <p class="step-description">Sign up and design your card with our easy-to-use editor. Add your photo, contact details, and social links.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Customize & Brand</h3>
+                    <p class="step-description">Personalize with your brand colors, logo, and preferred layout. Choose between digital-only or physical NFC cards.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Share & Connect</h3>
+                    <p class="step-description">Share via QR code, link, or NFC tap. Track engagements and manage your connections effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">Choose the plan that works best for your business needs</p>
+            </div>
+            
+            <div class="pricing-tabs">
+                <div class="pricing-tab active">Monthly</div>
+                <div class="pricing-tab">Yearly (Save 20%)</div>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Starter</h3>
+                    <p class="pricing-description">Perfect for individuals and freelancers</p>
+                    <div class="pricing-price">Rs 499<span class="pricing-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li>1 Digital Card</li>
+                        <li>Basic QR Code</li>
+                        <li>Standard Analytics</li>
+                        <li>Email Support</li>
+                        <li class="disabled">Custom Branding</li>
+                        <li class="disabled">NFC Card</li>
+                        <li class="disabled">Team Management</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">Get Started</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3 class="pricing-name">Professional</h3>
+                    <p class="pricing-description">Ideal for small businesses and professionals</p>
+                    <div class="pricing-price">Rs 999<span class="pricing-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li>3 Digital Cards</li>
+                        <li>Custom QR Codes</li>
+                        <li>Advanced Analytics</li>
+                        <li>Priority Support</li>
+                        <li>Custom Branding</li>
+                        <li>1 NFC Card</li>
+                        <li class="disabled">Team Management</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;">Get Started</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Business</h3>
+                    <p class="pricing-description">For growing teams and enterprises</p>
+                    <div class="pricing-price">Rs 1,999<span class="pricing-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li>10 Digital Cards</li>
+                        <li>Custom QR Codes</li>
+                        <li>Premium Analytics</li>
+                        <li>24/7 Priority Support</li>
+                        <li>Advanced Branding</li>
+                        <li>3 NFC Cards</li>
+                        <li>Team Management</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">Get Started</button>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p>All plans include a 14-day free trial. Need a custom solution? <a href="#contact" style="color: var(--primary); font-weight: 600;">Contact us</a></p>
             </div>
         </div>
     </section>
@@ -829,7 +1392,11 @@
                         <i>KPK</i>
                     </div>
                     <h3 class="location-name">Khyber Pakhtunkhwa</h3>
-                    <p class="location-description">Comprehensive digital visiting card solutions for businesses across the province.</p>
+                    <p class="location-description">Comprehensive digital visiting card solutions for businesses across the province with local support teams.</p>
+                    <div class="location-stats">
+                        <div class="location-stat"><span>320+</span> Clients</div>
+                        <div class="location-stat"><span>98%</span> Satisfaction</div>
+                    </div>
                 </div>
                 
                 <div class="location-card">
@@ -837,7 +1404,11 @@
                         <i>M</i>
                     </div>
                     <h3 class="location-name">Mardan</h3>
-                    <p class="location-description">Tailored digital cards for Mardan's business community and professionals.</p>
+                    <p class="location-description">Tailored digital cards for Mardan's business community with Pashto/Urdu language support.</p>
+                    <div class="location-stats">
+                        <div class="location-stat"><span>150+</span> Clients</div>
+                        <div class="location-stat"><span>24/7</span> Support</div>
+                    </div>
                 </div>
                 
                 <div class="location-card">
@@ -845,7 +1416,11 @@
                         <i>R</i>
                     </div>
                     <h3 class="location-name">Rustam</h3>
-                    <p class="location-description">Custom digital card designs for Rustam's growing commercial sector.</p>
+                    <p class="location-description">Custom digital card designs for Rustam's growing commercial sector with industry-specific templates.</p>
+                    <div class="location-stats">
+                        <div class="location-stat"><span>85+</span> Clients</div>
+                        <div class="location-stat"><span>95%</span> Renewal</div>
+                    </div>
                 </div>
                 
                 <div class="location-card">
@@ -853,8 +1428,17 @@
                         <i>C</i>
                     </div>
                     <h3 class="location-name">Chargulli</h3>
-                    <p class="location-description">Professional digital identity solutions for Chargulli's business owners.</p>
+                    <p class="location-description">Professional digital identity solutions for Chargulli's business owners with personalized onboarding.</p>
+                    <div class="location-stats">
+                        <div class="location-stat"><span>60+</span> Clients</div>
+                        <div class="location-stat"><span>100%</span> Satisfaction</div>
+                    </div>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="margin-bottom: 15px;">Also Serving: Peshawar, Swabi, Charsadda, Nowshera & More</h3>
+                <p>Contact us to check availability in your specific area</p>
             </div>
         </div>
     </section>
@@ -869,7 +1453,7 @@
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"JK Digital Business Cards revolutionized how I network in Mardan. My clients love the modern approach and I've seen a 40% increase in follow-ups."</p>
+                    <p class="testimonial-text">"JK Digital Business Cards revolutionized how I network in Mardan. My clients love the modern approach and I've seen a 40% increase in follow-ups. The Pashto language option is especially helpful for local businesses."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">A</div>
                         <div class="author-info">
@@ -880,18 +1464,18 @@
                 </div>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"As a freelancer in Rustam, having a digital business card has made me look more professional. The analytics help me track my networking efforts."</p>
+                    <p class="testimonial-text">"As a freelancer in Rustam, having a digital business card has made me look more professional. The analytics help me track my networking efforts and the NFC card is always a conversation starter at events."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">S</div>
                         <div class="author-info">
                             <h4>Sara Ahmed</h4>
-                            <p>Freelancer, Rustam</p>
+                            <p>Freelance Designer, Rustam</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"The team at JK provided excellent service in Chargulli. My digital card perfectly represents my brand and has helped me stand out in my industry."</p>
+                    <p class="testimonial-text">"The team at JK provided excellent service in Chargulli. My digital card perfectly represents my brand and has helped me stand out in my industry. The real-time updates feature saved me when I changed offices."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">M</div>
                         <div class="author-info">
@@ -904,12 +1488,87 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about our digital business cards</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do digital business cards work?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Digital business cards work by creating a shareable online profile that contains your contact information. You can share this profile via QR code, NFC tap, or a simple link. When someone scans your QR code or taps your NFC card, they're directed to your digital card where they can view your details, save your contact, or connect with you on social media.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do recipients need an app to view my digital card?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, recipients do not need any special app to view your digital business card. When they scan your QR code or tap your NFC card, it opens directly in their web browser. They can save your contact information directly to their phone's address book with one click.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I update my information after sharing my card?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! One of the biggest advantages of digital business cards is that you can update your information at any time. When you make changes, all previously shared cards automatically update with the new information. You never have to worry about outdated contact details.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What's the difference between QR codes and NFC cards?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>QR codes are visual codes that can be scanned with a smartphone camera. NFC cards contain a small chip that can be tapped against an NFC-enabled smartphone to share your information. QR codes work with any smartphone camera, while NFC requires a phone with NFC capabilities (most modern smartphones have this). NFC is often faster and more convenient for in-person meetings.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there a free trial available?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer a 14-day free trial for all our plans. During the trial, you can create your digital card, test all features, and share it with contacts. No credit card is required to start your trial.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer support in local languages?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We provide support in Urdu, Pashto, and English. Our local team in KPK understands the specific needs of businesses in the region and can assist you in your preferred language.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2 class="cta-title">Ready to Elevate Your Professional Presence?</h2>
-            <p class="cta-description">Join hundreds of professionals in KPK who have transformed their networking with JK Digital Business Cards</p>
-            <a href="#" class="cta-button">Create Your Card Now</a>
+            <h2 class="cta-title">Ready to Transform Your Networking?</h2>
+            <p class="cta-description">Join hundreds of professionals in KPK who have modernized their business connections with JK Digital Business Cards</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-button">Start Free Trial</a>
+                <a href="#" class="cta-button outline">Schedule a Demo</a>
+            </div>
         </div>
     </section>
 
@@ -920,6 +1579,12 @@
                 <div class="footer-col">
                     <h3>JK Digital Business Cards</h3>
                     <p>Premium digital visiting card solutions for professionals and businesses in KPK, Mardan, Rustam, and Chargulli.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">FB</a>
+                        <a href="#" class="social-link">IG</a>
+                        <a href="#" class="social-link">IN</a>
+                        <a href="#" class="social-link">TW</a>
+                    </div>
                 </div>
                 
                 <div class="footer-col">
@@ -928,8 +1593,8 @@
                         <a href="#" class="footer-link">Home</a>
                         <a href="#features" class="footer-link">Features</a>
                         <a href="#pricing" class="footer-link">Pricing</a>
-                        <a href="#about" class="footer-link">About Us</a>
-                        <a href="#contact" class="footer-link">Contact</a>
+                        <a href="#how-it-works" class="footer-link">How It Works</a>
+                        <a href="#testimonials" class="footer-link">Testimonials</a>
                     </div>
                 </div>
                 
@@ -938,24 +1603,25 @@
                     <div class="footer-links">
                         <a href="#" class="footer-link">Digital Business Cards</a>
                         <a href="#" class="footer-link">Digital Visiting Cards</a>
+                        <a href="#" class="footer-link">NFC Business Cards</a>
                         <a href="#" class="footer-link">Custom Designs</a>
                         <a href="#" class="footer-link">Bulk Orders</a>
-                        <a href="#" class="footer-link">SEO Optimization</a>
                     </div>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Contact Us</h3>
                     <div class="footer-links">
-                        <a href="#" class="footer-link">+92-XXX-XXXXXXX</a>
-                        <a href="#" class="footer-link">info@jkdigitalcards.com</a>
+                        <a href="tel:+923211234567" class="footer-link">+92-321-1234567</a>
+                        <a href="mailto:info@jkdigitalcards.com" class="footer-link">info@jkdigitalcards.com</a>
                         <a href="#" class="footer-link">Mardan, KPK, Pakistan</a>
+                        <a href="#" class="footer-link">Mon-Fri: 9AM-6PM</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 JK Digital Business Cards. All rights reserved. | Premium Digital Visiting Cards for KPK</p>
+                <p>&copy; 2023 JK Digital Business Cards. All rights reserved. | Premium Digital Visiting Cards for KPK Businesses</p>
             </div>
         </div>
     </footer>
@@ -987,6 +1653,42 @@
             } else {
                 header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
             }
+        });
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Pricing tabs functionality
+        document.querySelectorAll('.pricing-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                document.querySelectorAll('.pricing-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Update pricing based on selected tab
+                const prices = document.querySelectorAll('.pricing-price');
+                if(tab.textContent.includes('Yearly')) {
+                    prices.forEach(price => {
+                        const monthlyPrice = parseFloat(price.textContent.replace('Rs ', ''));
+                        const yearlyPrice = monthlyPrice * 12 * 0.8; // 20% discount
+                        price.innerHTML = `Rs ${yearlyPrice.toFixed(0)}<span class="pricing-period">/year</span>`;
+                    });
+                } else {
+                    prices.forEach(price => {
+                        const originalPrices = [499, 999, 1999];
+                        const index = Array.from(prices).indexOf(price);
+                        price.innerHTML = `Rs ${originalPrices[index]}<span class="pricing-period">/month</span>`;
+                    });
+                }
+            });
         });
     </script>
 </body>
