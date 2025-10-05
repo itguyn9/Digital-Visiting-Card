@@ -1,74 +1,27 @@
 // pricing-calculator.js
-// Handles dynamic price calculations for digital card packages
 
-class PricingCalculator {
-    constructor() {
-        this.packages = {
-            essential: 1500,
-            professional: 2500,
-            business: 5000
-        };
-        this.addOns = {
-            logoDesign: 500,
-            qrCode: 300,
-            customDomain: 1000
-        };
-        this.selectedPackage = 'essential';
-        this.selectedAddOns = [];
-        this.currency = 'PKR';
-        this.init();
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("💰 Pricing Calculator Ready");
 
-    init() {
-        this.bindEvents();
-        this.updatePriceDisplay();
-    }
+  const pricingCards = document.querySelectorAll(".price-card");
 
-    bindEvents() {
-        // Package selection
-        document.querySelectorAll('.package-option').forEach(option => {
-            option.addEventListener('click', (e) => {
-                this.selectPackage(e.currentTarget.dataset.package);
-            });
-        });
+  pricingCards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      card.classList.add("hovered");
+    });
+    card.addEventListener("mouseleave", () => {
+      card.classList.remove("hovered");
+    });
+  });
 
-        // Add-on selection
-        document.querySelectorAll('.addon-checkbox').forEach(checkbox => {
-            checkbox.addEventListener('change', (e) => {
-                const addon = e.target.value;
-                if (e.target.checked) {
-                    this.selectedAddOns.push(addon);
-                } else {
-                    this.selectedAddOns = this.selectedAddOns.filter(a => a !== addon);
-                }
-                this.updatePriceDisplay();
-            });
-        });
-    }
+  // Example of a dynamic calculator
+  function calculatePrice(cards, customDesign, support) {
+    let base = cards * 999;
+    if (customDesign) base += 500;
+    if (support) base += 300;
+    return base;
+  }
 
-    selectPackage(pkg) {
-        this.selectedPackage = pkg;
-        document.querySelectorAll('.package-option').forEach(opt => opt.classList.remove('active'));
-        document.querySelector(`.package-option[data-package="${pkg}"]`)?.classList.add('active');
-        this.updatePriceDisplay();
-    }
-
-    calculateTotal() {
-        const basePrice = this.packages[this.selectedPackage];
-        const addonsPrice = this.selectedAddOns.reduce((sum, addon) => sum + this.addOns[addon], 0);
-        return basePrice + addonsPrice;
-    }
-
-    updatePriceDisplay() {
-        const total = this.calculateTotal();
-        const displayElement = document.getElementById('total-price');
-        if (displayElement) {
-            displayElement.textContent = `${this.currency} ${total.toLocaleString()}`;
-        }
-    }
-}
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function () {
-    new PricingCalculator();
+  // Example usage
+  console.log("Example: 5 cards with custom design =", calculatePrice(5, true, false), "PKR");
 });
