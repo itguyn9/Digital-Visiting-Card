@@ -1,4 +1,4 @@
-// Card Builder Functionality
+// JK Digital Cards - Card Builder Script
 class CardBuilder {
     constructor() {
         this.currentStep = 1;
@@ -19,14 +19,16 @@ class CardBuilder {
         // Next step buttons
         document.querySelectorAll('.next-step').forEach(button => {
             button.addEventListener('click', (e) => {
-                this.nextStep(parseInt(e.target.dataset.next));
+                const nextStep = parseInt(e.target.dataset.next);
+                this.nextStep(nextStep);
             });
         });
 
         // Previous step buttons
         document.querySelectorAll('.prev-step').forEach(button => {
             button.addEventListener('click', (e) => {
-                this.previousStep(parseInt(e.target.dataset.prev));
+                const prevStep = parseInt(e.target.dataset.prev);
+                this.previousStep(prevStep);
             });
         });
 
@@ -35,10 +37,20 @@ class CardBuilder {
             input.addEventListener('input', () => this.updateCardData());
         });
 
-        // Complete order
-        document.getElementById('complete-order')?.addEventListener('click', () => {
-            this.completeOrder();
+        // Package select change
+        document.querySelectorAll('input[name="package"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                this.cardData.package = e.target.value;
+            });
         });
+
+        // Complete order
+        const completeOrderBtn = document.getElementById('complete-order');
+        if (completeOrderBtn) {
+            completeOrderBtn.addEventListener('click', () => {
+                this.completeOrder();
+            });
+        }
     }
 
     nextStep(step) {
@@ -75,17 +87,18 @@ class CardBuilder {
         document.querySelectorAll('.step').forEach(step => {
             step.classList.remove('active');
         });
-        document.querySelector(`.step[data-step="${this.currentStep}"]`)?.classList.add('active');
+        const activeStep = document.querySelector(`.step[data-step="${this.currentStep}"]`);
+        if (activeStep) activeStep.classList.add('active');
     }
 
     updateCardData() {
         // Update personal info
         this.cardData.personalInfo = {
-            name: document.getElementById('name')?.value || '',
-            title: document.getElementById('title')?.value || '',
-            phone: document.getElementById('phone')?.value || '',
-            email: document.getElementById('email')?.value || '',
-            website: document.getElementById('website')?.value || ''
+            name: document.getElementById('name')?.value.trim() || '',
+            title: document.getElementById('title')?.value.trim() || '',
+            phone: document.getElementById('phone')?.value.trim() || '',
+            email: document.getElementById('email')?.value.trim() || '',
+            website: document.getElementById('website')?.value.trim() || ''
         };
 
         // Update design preferences
@@ -102,29 +115,27 @@ class CardBuilder {
         if (!preview) return;
 
         const { name, title, phone } = this.cardData.personalInfo;
-        
-        // Update name
-        const nameElement = preview.querySelector('#preview-name');
-        if (nameElement) nameElement.textContent = name || 'Your Name';
-        
-        // Update title
-        const titleElement = preview.querySelector('#preview-title');
-        if (titleElement) titleElement.textContent = title || 'Professional Title';
-        
-        // Update phone
-        const phoneElement = preview.querySelector('#preview-phone');
-        if (phoneElement) phoneElement.textContent = phone || '+92 XXX XXXXXXX';
-        
-        // Update avatar with initials
+
+        // Update preview text
+        preview.querySelector('#preview-name').textContent = name || 'Your Name';
+        preview.querySelector('#preview-title').textContent = title || 'Professional Title';
+        preview.querySelector('#preview-phone').textContent = phone || '+92 XXX XXXXXXX';
+
+        // Avatar initials
         const avatar = preview.querySelector('.card-avatar');
         if (avatar) {
             const initials = name ? name.split(' ').map(n => n[0]).join('').toUpperCase() : 'JD';
             avatar.textContent = initials;
         }
+
+        // Change preview color (if applicable)
+        const card = preview.querySelector('.card-preview');
+        if (card) {
+            card.style.borderColor = this.cardData.design.color;
+        }
     }
 
     validateCurrentStep() {
-        // Add validation logic for each step
         switch (this.currentStep) {
             case 1:
                 return this.validatePersonalInfo();
@@ -136,53 +147,41 @@ class CardBuilder {
     }
 
     validatePersonalInfo() {
-        const name = document.getElementById('name')?.value;
-        const phone = document.getElementById('phone')?.value;
-        
+        const name = document.getElementById('name')?.value.trim();
+        const phone = document.getElementById('phone')?.value.trim();
+
         if (!name || !phone) {
-            alert('Please fill in all required fields (Name and Phone Number)');
+            alert('Please fill in all required fields: Name and Phone Number.');
             return false;
         }
         return true;
     }
 
     validateDesign() {
-        // Basic design validation
+        // Always valid for now
         return true;
     }
 
     completeOrder() {
-        if (this.validateCurrentStep()) {
-            const orderData = {
-                ...this.cardData,
-                timestamp: new Date().toISOString()
-            };
+        if (!this.validateCurrentStep()) return;
 
-            // Send order via WhatsApp
-            this.sendOrderViaWhatsApp(orderData);
-        }
+        const orderData = {
+            ...this.cardData,
+            timestamp: new Date().toISOString()
+        };
+
+        this.sendOrderViaWhatsApp(orderData);
     }
 
     sendOrderViaWhatsApp(orderData) {
         const { name, phone, email } = orderData.personalInfo;
         const packageName = this.getPackageName(orderData.package);
-        
-        const message = `New Digital Card Order:
-        
-Name: ${name}
-Phone: ${phone}
-Email: ${email || 'Not provided'}
-Package: ${packageName}
-        
-Design Preferences:
-Color: ${orderData.design.color}
-Layout: ${orderData.design.layout}
 
-Please proceed with this order.`;
+        const message = `🪪 *New Digital Card Order*\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📧 Email: ${email || 'Not provided'}\n💼 Package: ${packageName}\n\n🎨 Design:\n• Color: ${orderData.design.color}\n• Layout: ${orderData.design.layout}\n\nPlease proceed with this order.`;
 
         const encodedMessage = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-        
+
         window.open(whatsappUrl, '_blank');
     }
 
@@ -196,7 +195,7 @@ Please proceed with this order.`;
     }
 }
 
-// Initialize card builder when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize card builder after DOM loaded
+document.addEventListener('DOMContentLoaded', function () {
     new CardBuilder();
 });
