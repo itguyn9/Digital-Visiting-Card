@@ -1,106 +1,120 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JK Digital Cards | چارگلی ڈیجیٹل کارڈز</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JK Digital Cards | Premium Digital Business Cards</title>
 
-  <!-- Favicon -->
+  <!-- 🌐 SEO -->
+  <meta name="description" content="Professional digital business cards with QR codes, WhatsApp integration, and instant sharing. Transform your business networking." />
+  <meta name="keywords" content="Digital Business Cards, QR Cards, JK Digital Cards, Online Business Cards, WhatsApp Cards, Virtual Visiting Cards, Digital Identity" />
+  <meta name="author" content="Jehangir Khan" />
+
+  <!-- 🖼️ Social -->
+  <meta property="og:title" content="JK Digital Cards | Premium Digital Business Cards" />
+  <meta property="og:description" content="Create professional digital cards with QR, WhatsApp, and instant sharing." />
+  <meta property="og:image" content="assets/images/preview.png" />
+  <meta property="og:url" content="https://itguyn9.github.io/jk-digital-cards/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- 🔗 Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
 
-  <!-- CSS Links -->
+  <!-- 🎨 Styles -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- 🧩 Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="nav-container container">
-      <div class="logo">
-        <img src="assets/images/logo.png" alt="JK Digital Cards Logo" class="logo-img">
-        <span class="logo-text">JK Digital Cards</span>
-      </div>
-
-      <nav class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <!-- ✅ NAVBAR -->
+  <nav id="navbar">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="JK Digital Cards Logo" />
+      <span>JK Digital Cards</span>
     </div>
-  </header>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#builder">Create</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+    </div>
+  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero container" id="hero">
+  <!-- ✅ HERO SECTION -->
+  <section id="hero">
     <div class="hero-content">
-      <h1>ڈیجیٹل کارڈز کے ساتھ اپنا بزنس جدید بنائیں</h1>
-      <p>JK Digital Cards آپ کے بزنس کو ڈیجیٹل دنیا میں پیش کرنے کا آسان، خوبصورت اور موثر طریقہ ہے۔</p>
+      <h1>Transform Your Business Networking</h1>
+      <p>Professional digital business cards with QR codes, WhatsApp integration, and instant sharing. Make lasting impressions without paper waste.</p>
       <div class="hero-buttons">
-        <a href="#pricing" class="btn-primary">ابھی شروع کریں</a>
-        <a href="#features" class="btn-secondary">فیچرز دیکھیں</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="assets/images/logo.png" alt="Digital Card Preview">
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features container" id="features">
-    <h2>اہم خصوصیات</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>اسمارٹ QR کوڈ</h3>
-        <p>ہر کارڈ کے ساتھ منفرد QR کوڈ جو فوری شیئرنگ کو ممکن بناتا ہے۔</p>
-      </div>
-      <div class="feature-card">
-        <h3>موبائل فرینڈلی ڈیزائن</h3>
-        <p>ہر ڈیوائس پر خوبصورت اور تیز رفتار کارکردگی۔</p>
-      </div>
-      <div class="feature-card">
-        <h3>لوکل SEO آپٹیمائزیشن</h3>
-        <p>آپ کا بزنس گوگل پر زیادہ نمایاں دکھائی دیتا ہے۔</p>
+        <button class="btn ripple" onclick="scrollToSection('builder')">Create Your Card</button>
+        <button class="btn ripple" onclick="scrollToSection('pricing')">View Packages</button>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section class="pricing container" id="pricing">
-    <h2>پیکجز</h2>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>Basic</h3>
-        <p class="price">Rs 999</p>
-        <ul>
-          <li>1 Digital Card</li>
-          <li>Basic QR Code</li>
-          <li>1 Design Template</li>
-        </ul>
-        <a href="#" class="btn-primary">Order Now</a>
-      </div>
-      <div class="price-card featured">
-        <h3>Pro</h3>
-        <p class="price">Rs 1999</p>
-        <ul>
-          <li>5 Digital Cards</li>
-          <li>Custom Design</li>
-          <li>Priority Support</li>
-        </ul>
-        <a href="#" class="btn-primary">Order Now</a>
+  <!-- ✅ CARD BUILDER -->
+  <section id="builder">
+    <h1>Build Your Digital Card</h1>
+    <p>Customize your digital card in just a few steps.</p>
+
+    <div id="card-builder">
+      <form id="card-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="occupation" placeholder="Occupation" required />
+        <input type="tel" id="phone" placeholder="Phone Number" required />
+        <input type="email" id="email" placeholder="Email" />
+        <input type="text" id="website" placeholder="Website / Portfolio" />
+        <button type="button" class="btn ripple" onclick="generatePreview()">Preview</button>
+      </form>
+
+      <div id="card-preview">
+        <h3 id="preview-name">Jehangir Khan</h3>
+        <p id="preview-occupation">Digital Solutions Expert</p>
+        <p id="preview-phone">+92 345 9016204</p>
+        <p id="preview-email">jehangir3life@gmail.com</p>
+        <p id="preview-website">https://jk-digital-cards.github.io</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ✅ PRICING SECTION -->
+  <section id="pricing">
+    <h1>Packages & Pricing</h1>
+    <div>
+      <label><input type="checkbox" class="feature-checkbox" value="500" checked /> Basic Design (PKR 500)</label><br>
+      <label><input type="checkbox" class="feature-checkbox" value="1000" /> WhatsApp Integration (PKR 1000)</label><br>
+      <label><input type="checkbox" class="feature-checkbox" value="1500" /> QR Code (PKR 1500)</label><br>
+      <label><input type="checkbox" class="feature-checkbox" value="1000" /> Custom Domain (PKR 1000)</label><br>
+      <label><input type="checkbox" class="feature-checkbox" value="500" /> Social Links (PKR 500)</label>
+    </div>
+    <h3>Total: <span id="total-price">PKR 500</span></h3>
+    <button class="btn ripple" onclick="orderNow()">Order Now via WhatsApp</button>
+  </section>
+
+  <!-- ✅ CONTACT SECTION -->
+  <section id="contact">
+    <h1>Contact Us</h1>
+    <p>Need a custom quote or help? Reach out directly!</p>
+    <a href="https://wa.me/923459016204?text=Hi! I'm interested in a Digital Card" target="_blank" class="btn ripple">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+  </section>
+
+  <!-- ✅ FOOTER -->
   <footer>
-    <div class="container footer-container">
-      <p>© 2025 JK Digital Cards. All rights reserved.</p>
-      <p>Developed by Jehangir Khan</p>
-    </div>
+    <p>© 2025 JK Digital Cards | Developed by <strong>Jehangir Khan</strong></p>
   </footer>
 
+  <!-- ⚙️ Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/card-builder.js"></script>
+  <script src="js/pricing-calculator.js"></script>
 </body>
 </html>
