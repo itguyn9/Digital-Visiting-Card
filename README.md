@@ -1,5 +1,7 @@
 # JK Digital Cards Website
 
+https://itguyn9.github.io/jk-digital-cards/
+
 A professional website for JK Digital Cards business, featuring digital business cards with QR codes, WhatsApp integration, and instant sharing.
 
 ## Features
